@@ -106,9 +106,9 @@ p {
 }
 
 :root.light > body {
-  background-color: #ffffff;
+  background-color: #F7F3FF;
 }
 
 :root.dark > body {
-  background-color: #000000;
+  background-color: #120F17;
 }

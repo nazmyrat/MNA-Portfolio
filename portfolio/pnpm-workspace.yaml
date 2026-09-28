@@ -10,7 +10,9 @@ supportedArchitectures:
 allowBuilds:
   '@firebase/util': true
   '@swc/core': true
+  '@vgpu/adapter-node': set this to true or false
   protobufjs: true
+  webgpu: set this to true or false
 onlyBuiltDependencies:
   - '@swc/core'
   - esbuild

@@ -1,50 +1,26 @@
-import { useMemo } from 'react'
+import FloatingLines from '@/components/react-bits/FloatingLines'
 
-import ColorBends from '@/components/react-bits/ColorBends'
-import DomeGallery from '@/components/react-bits/DomeGallery'
-import { useThemeColors } from '@/utils/useThemeColors'
-
-const IMAGES = ['/vasya1.png']
-
-const Landing = () => {
-  const c = useThemeColors()
-  const colors = useMemo(
-    () => [c.primary, c.primaryLight, c.secondary],
-    [c.primary, c.primaryLight, c.secondary]
-  )
-
-  return (
-    <main className="w-screen h-screen absolute">
-      <ColorBends
-        colors={colors}
-        rotation={90}
-        speed={0.2}
-        scale={1}
-        frequency={1}
-        warpStrength={1}
-        mouseInfluence={1}
-        noise={0.15}
-        parallax={0.5}
-        iterations={1}
-        intensity={1.5}
-        bandWidth={6}
-        transparent
-        autoRotate={0}
-        className=""
+const Landing = () => (
+  <main className="relative min-h-screen w-screen overflow-hidden bg-[#120F17]">
+    <div className="absolute inset-0 z-0">
+      <FloatingLines
+        enabledWaves={['top', 'middle', 'bottom']}
+        lineCount={8}
+        lineDistance={8}
+        bendRadius={8}
+        bendStrength={-2}
+        interactive
+        parallax
+        animationSpeed={1}
+        linesGradient={['#E945F5', '#896ABD', '#A855F7']}
+        backgroundColor="#120F17"
       />
-      <div className="w-screen h-screen absolute">
-        <DomeGallery
-          images={IMAGES}
-          fit={0.8}
-          minRadius={600}
-          maxVerticalRotationDeg={0}
-          segments={34}
-          dragDampening={2}
-          grayscale
-        />
-      </div>
-    </main>
-  )
-}
+    </div>
+
+    <section className="pointer-events-none relative z-10 min-h-screen">
+      {/* Позже добавим сюда текст и изображение девушки */}
+    </section>
+  </main>
+)
 
 export default Landing
