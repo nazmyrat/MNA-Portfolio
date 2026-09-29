@@ -252,7 +252,7 @@ const Landing = () => {
   id="about"
   className="relative z-10 min-h-screen scroll-mt-28 px-6 py-28 text-white"
 >
-  <div className="mx-auto max-w-6xl">
+  <div className="mx-auto max-w-6xl -translate-x-28">
     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-violet-300">
       01 / Обо мне
     </p>
@@ -263,7 +263,7 @@ const Landing = () => {
 
     <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-white/80 md:text-xl">
       <p>
-        Я Назылы Муратова, развиваюсь в full-stack-разработке. Создаю веб-приложения
+        Я Муратова Назылы, развиваюсь в full-stack-разработке. Создаю веб-приложения
         и изучаю Python, анализ данных и машинное обучение.
       </p>
 
