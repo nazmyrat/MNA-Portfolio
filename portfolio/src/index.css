@@ -112,3 +112,67 @@ p {
 :root.dark > body {
   background-color: #120F17;
 }
+.hero-copy {
+  font-family:'Lora', sans-serif;
+
+}
+
+.hero-shiny {
+  -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.9);
+  filter:
+    drop-shadow(0 2px 5px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 18px rgba(168, 85, 247, 0.95));
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: portfolio-ticker 36s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.ticker-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 9px 18px;
+  color: #f3e8ff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ticker-chip::before {
+  content: '•';
+  color: #c084fc;
+}
+
+@keyframes portfolio-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

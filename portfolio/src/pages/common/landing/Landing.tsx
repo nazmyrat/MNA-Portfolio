@@ -4,6 +4,7 @@ import GooeyNav from '@/components/react-bits/GooeyNav'
 import GlideSelect from '@/components/react-bits/GlideSelect'
 import { useTranslation } from 'react-i18next'
 import { changeLanguage } from '@/components/i18n/changeLanguage'
+import ShinyText from '@/components/react-bits/ShinyText'
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -16,7 +17,7 @@ const Landing = () => {
   const { i18n } = useTranslation()
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#120F17]">
+    <main id="home" className="relative min-h-screen w-full overflow-x-hidden bg-[#120F17]">
       {/* Фон */}
       <div className="absolute inset-0 z-0">
         <FloatingLines
@@ -34,7 +35,17 @@ const Landing = () => {
       </div>
 
       {/* Меню и выбор языка — отдельный слой поверх фона и карточки */}
-      <header className="pointer-events-auto fixed inset-x-0 top-6 z-50 mx-auto flex w-full max-w-6xl items-center justify-between px-6">
+      <header  className="pointer-events-auto fixed inset-x-0 top-6 z-50 mx-auto flex w-full max-w-6xl items-center justify-between px-6"
+  onClickCapture={(event) => {
+    const clickedLink = (event.target as HTMLElement).closest('a[href="#home"]')
+
+    if (clickedLink) {
+      event.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }}
+>
+        
         <GooeyNav
           items={navItems}
           particleCount={15}
@@ -89,55 +100,64 @@ const Landing = () => {
 
       {/* Первый экран */}
       <section
-        id="home"
         className="pointer-events-none relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-10 pl-18 pr-6 py-16 md:flex-row md:justify-between"
       >
-        <div className="pointer-events-auto w-full max-w-3xl text-left md:-translate-y-10">
-          <p
-            className="mb-2 text-xl text-violet-200 md:text-2xl"
-            style={{ textShadow: '0 2px 12px #120F17' }}
-          >
-            Hello! My name is Nazily Muratova.
-          </p>
+<div className="pointer-events-auto hero-copy w-full max-w-3xl text-left md:-translate-y-10">
+  <p className="mb-3 text-xl text-violet-100 md:text-2xl">
+   <h2
+  className="mb-3 text-3xl font-semibold tracking-wide text-violet-100 md:text-4xl"
+  style={{
+    textShadow: '0 0 16px rgba(216, 180, 254, 0.7), 0 2px 10px #120F17',
+  }}
+>
+  Привет! Я
+</h2>
+  </p>
 
-          <h1
-            className="my-10 text-5xl font-medium leading-tight text-white md:text-7xl"
-            style={{
-              textShadow:
-                '0 0 18px rgba(168, 85, 247, 0.65), 0 3px 18px rgba(0, 0, 0, 0.9)',
-            }}
-          >
-            Full-Stack Developer
-            <span aria-hidden="true" className="hero-caret" />
-          </h1>
+  <h1 className="my-6 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl 2xl:text-8xl">
+  <ShinyText
+    text="Full-Stack Developer"
+    className="hero-shiny"
+    speed={2}
+    color="#ffffff"
+    shineColor="#f3c8ff"
+    spread={120}
+    direction="left"
+    delay={0}
+  />
+  <span aria-hidden="true" className="hero-caret" />
+</h1>
 
-          <p
-            className="mb-8 max-w-2xl text-lg text-gray-200 md:text-xl"
-            style={{ textShadow: '0 2px 12px #120F17' }}
-          >
-            I build web applications, from backend systems to user-friendly
-            interfaces.
-          </p>
+<div className="max-w-2xl space-y-4 text-lg leading-relaxed text-white md:text-xl">
+  <p>
+    Изучаю веб-разработку, Python, анализ данных и машинное обучение. Люблю
+    разбираться в сложных задачах и превращать идеи в работающие проекты.
+  </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              className="rounded-xl bg-violet-600 px-6 py-3 font-medium text-white transition hover:bg-violet-500"
-            >
-              Contact Me
-            </a>
+  <p className="border-l-2 border-violet-400 pl-4 font-medium text-violet-100">
+    Для меня программирование — это логика, математика и творчество.
+  </p>
+</div>
 
-            <a
-              href="#projects"
-              className="rounded-xl border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10"
-            >
-              View My Projects →
-            </a>
-          </div>
-        </div>
+  <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
+    <a
+      href="#contact"
+      className="rounded-xl bg-violet-600 px-6 py-3 font-medium text-white transition hover:bg-violet-500"
+    >
+      Contact Me
+    </a>
+
+    <a
+      href="#projects"
+      className="rounded-xl border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10"
+    >
+      View My Projects →
+    </a>
+  </div>
+</div>
 
         {/* FlipCard */}
-        <div className="pointer-events-auto flex w-full justify-center md:w-auto md:-translate-x-36 md:-translate-y-10">
+        <div className="pointer-events-auto flex w-full justify-center md:w-auto md:-translate-x-24 md:-translate-y-10">
           <FlipCard
             front={
               <div
@@ -183,6 +203,7 @@ const Landing = () => {
                   MNA
                 </span>
               </div>
+              
             }
             axis="y"
             flipOnClick
@@ -197,7 +218,75 @@ const Landing = () => {
             ariaLabel="Flip card with Nazily Muratova illustration and MNA logo"
           />
         </div>
+{/* Бегущая строка */}
+<div className="pointer-events-none relative z-20 w-full overflow-hidden border-y border-white/10 bg-[#120F17]/70 py-3 backdrop-blur-sm md:absolute md:inset-x-0 md:bottom-0">
+  <div className="ticker-track">
+    {[0, 1].map((copy) => (
+      <div
+        className="ticker-group"
+        aria-hidden={copy === 1}
+        key={copy}
+      >
+        {[
+          'BUILD',
+          'CREATE',
+          'CODE',
+          'DESIGN',
+          'ANALYZE',
+          'MODEL',
+          'LEARN',
+          'SOLVE',
+          'DEPLOY',
+        ].map((word) => (
+          <span className="ticker-chip" key={word}>
+            {word}
+          </span>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>
       </section>
+
+      <section
+  id="about"
+  className="relative z-10 min-h-screen scroll-mt-28 px-6 py-28 text-white"
+>
+  <div className="mx-auto max-w-6xl">
+    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-violet-300">
+      01 / Обо мне
+    </p>
+
+    <h2 className="mb-8 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+      Разработка на стыке логики, данных и творчества
+    </h2>
+
+    <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-white/80 md:text-xl">
+      <p>
+        Я Назылы Муратова, развиваюсь в full-stack-разработке. Создаю веб-приложения
+        и изучаю Python, анализ данных и машинное обучение.
+      </p>
+
+      <p>
+        Мне нравится разбираться в сложных задачах, пробовать новые технологии
+        и превращать идеи в работающие проекты.
+      </p>
+    </div>
+
+    <div className="mt-10 flex flex-wrap gap-3">
+      {['Web Development', 'Python', 'Data Analytics', 'Machine Learning'].map(
+        (skill) => (
+          <span
+            key={skill}
+            className="rounded-full border border-violet-300/25 bg-violet-400/10 px-5 py-2 text-sm text-violet-100"
+          >
+            {skill}
+          </span>
+        ),
+      )}
+    </div>
+  </div>
+</section>
     </main>
   )
 }
