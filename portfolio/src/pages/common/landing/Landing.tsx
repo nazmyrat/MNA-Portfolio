@@ -7,6 +7,9 @@ import { changeLanguage } from '@/components/i18n/changeLanguage'
 import ShinyText from '@/components/react-bits/ShinyText'
 import FolderFloat from '@/components/react-bits/FolderFloat'
 import FoldText from '@/components/react-bits/FoldText'
+import { useState } from 'react'
+import SwipeToast from '@/components/react-bits/SwipeToast'
+import TargetCursor from '@/components/react-bits/TargetCursor'
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -17,9 +20,17 @@ const navItems = [
 
 const Landing = () => {
   const { i18n } = useTranslation()
+  const [toastOpen, setToastOpen] = useState(false)
 
   return (
-    <main id="home" className="relative min-h-screen w-full overflow-x-hidden bg-[#120F17]">
+    <main  id="home" className="relative min-h-screen w-full overflow-x-hidden bg-[#120F17]" >
+      <TargetCursor
+  spinDuration={2}
+  hideDefaultCursor
+  hoverDuration={0.2}
+  cursorColor="#ffffff"
+  cursorColorOnTarget="#B497CF"
+/>
       {/* Фон */}
       <div className="absolute inset-0 z-0">
         <FloatingLines
@@ -117,20 +128,34 @@ const Landing = () => {
   </p>
 
   <h1 className="my-6 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl 2xl:text-8xl">
-  <ShinyText
-    text="Full-Stack Developer"
-    className="hero-shiny"
-    speed={2}
-    color="#ffffff"
-    shineColor="#f3c8ff"
-    spread={120}
-    direction="left"
-    delay={0}
-  />
+  <span className="cursor-target inline-block">
+    <ShinyText
+      text="Full-Stack"
+      className="hero-shiny"
+      speed={2}
+      color="#ffffff"
+      shineColor="#f3c8ff"
+      spread={120}
+      direction="left"
+      delay={0}
+    />
+  </span>{' '}
+  <span className="cursor-target inline-block">
+    <ShinyText
+      text="Developer"
+      className="hero-shiny"
+      speed={2}
+      color="#ffffff"
+      shineColor="#f3c8ff"
+      spread={120}
+      direction="left"
+      delay={0}
+    />
+  </span>
   <span aria-hidden="true" className="hero-caret" />
 </h1>
 
-<div className="max-w-2xl space-y-4 text-lg leading-relaxed text-white md:text-xl">
+<div className="cursor-target max-w-2xl space-y-4 text-lg leading-relaxed text-white md:text-xl">
   <p>
     Изучаю веб-разработку, Python, анализ данных и машинное обучение. Люблю
     разбираться в сложных задачах и превращать идеи в работающие проекты.
@@ -144,14 +169,14 @@ const Landing = () => {
   <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
     <a
       href="#contact"
-      className="rounded-xl bg-violet-600 px-6 py-3 font-medium text-white transition hover:bg-violet-500"
+      className="cursor-target rounded-xl bg-violet-600 px-6 py-3 font-medium text-white transition hover:bg-violet-500"
     >
       Contact Me
     </a>
 
     <a
       href="#projects"
-      className="rounded-xl border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10"
+      className="cursor-target rounded-xl border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10"
     >
       View My Projects →
     </a>
@@ -159,7 +184,7 @@ const Landing = () => {
 </div>
 
         {/* FlipCard */}
-        <div className="pointer-events-auto flex w-full justify-center md:w-auto md:-translate-x-24 md:-translate-y-10">
+        <div className="cursor-target pointer-events-auto flex w-full justify-center md:w-auto md:-translate-x-24 md:-translate-y-10">
           <FlipCard
             front={
               <div
@@ -398,7 +423,7 @@ const Landing = () => {
       </article>
 
       {/* Data Analytics */}
-      <article className="rounded-3xl border border-white/10 bg-[#120F17]/70 p-7 backdrop-blur-md">
+      <article className=" rounded-3xl border border-white/10 bg-[#120F17]/70 p-7 backdrop-blur-md">
         <p className="mb-3 text-sm font-medium text-violet-300">
           Анализ данных · Jupyter + Python
         </p>
@@ -505,6 +530,7 @@ const Landing = () => {
 
           const subject = `Сообщение с портфолио от ${name}`
           const body = `Имя: ${name}\nEmail: ${email}\n\n${message}`
+          setToastOpen(true)
 
           window.location.href =
             `mailto:naz20112006@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
@@ -561,6 +587,19 @@ const Landing = () => {
     </footer>
   </div>
 </section>
+<SwipeToast
+  open={toastOpen}
+  onClose={() => setToastOpen(false)}
+  title="Письмо подготовлено"
+  description="Почтовое приложение откроется — нажмите там «Отправить»."
+  actionLabel="ОК"
+  background="#27272a"
+  color="#f5f5f5"
+  fuseColor="#A855F7"
+  duration={4500}
+  fuse="bottom"
+  pauseOnHover
+/>
     </main>
   )
 }
