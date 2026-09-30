@@ -328,6 +328,66 @@
       "welcome": "Welcome"
     }
   },
+  "portfolio": {
+    "navigation": { "home": "Home", "about": "About", "projects": "Projects", "contact": "Contact" },
+    "hero": {
+      "greeting": "Hello! I'm",
+      "description": "I study web development, Python, data analytics, and machine learning. I enjoy solving challenging problems and turning ideas into real projects.",
+      "motto": "To me, programming is a blend of logic, mathematics, and creativity.",
+      "contactCta": "Contact Me",
+      "projectsCta": "View My Projects →",
+      "avatarAlt": "Illustration of Nazily Muratova"
+    },
+    "about": {
+      "eyebrow": "01 / ABOUT ME",
+      "heading": "Development at the intersection of logic,\ndata, and creativity",
+      "paragraph1": "I'm Nazily Muratova, growing as a full-stack developer. I build web applications and study Python, data analytics, and machine learning.",
+      "paragraph2": "I enjoy solving challenging problems, exploring new technologies, and turning ideas into working projects.",
+      "stackLabel": "My Tech Stack",
+      "stackCount": "4 technologies",
+      "stackProgramming": "Programming: Python · SQL"
+    },
+    "projects": {
+      "eyebrow": "02 / PROJECTS",
+      "title": "My Work",
+      "neuroCategory": "Team project · Web + Telegram",
+      "neuroDescription": "A web application and Telegram bot with user preferences, favorites, and statistics.",
+      "neuroBullet1": "Backend built with Node.js, Express.js, and TypeScript",
+      "neuroBullet2": "PostgreSQL and Sequelize",
+      "neuroBullet3": "Telegram bot integration with Telegraf",
+      "neuroBullet4": "Collaborative development and Git workflows",
+      "openSite": "Visit website ↗",
+      "openBot": "Telegram bot ↗",
+      "analyticsCategory": "Data analytics · Jupyter + Python",
+      "analyticsTitle": "Stroke Risk Prediction",
+      "analyticsDescription": "Patient data analysis and research into factors associated with stroke risk.",
+      "analyticsBullet1": "Data cleaning and preparation",
+      "analyticsBullet2": "Exploratory analysis and visualization",
+      "analyticsBullet3": "Model training and evaluation",
+      "researchCta": "View the research ↗",
+      "storeCategory": "Learning project · React",
+      "storeDescription": "An online store frontend with a product catalog, product cards, and shopping cart interactions.",
+      "storeBullet1": "Reusable React components",
+      "storeBullet2": "Product catalog and user interactions",
+      "storeBullet3": "Git and GitHub version control"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "I'd be happy to collaborate! Reach out in whichever way is convenient or send me a message.",
+      "name": "Your name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message ↗",
+      "emailSubject": "Portfolio message from {{name}}",
+      "emailName": "Name",
+      "toastTitle": "Email prepared",
+      "toastDescription": "Your email app will open. Click “Send” there to finish.",
+      "toastOk": "OK",
+      "backToTop": "Back to top"
+    },
+    "languageLabel": "Choose language",
+    "flipCardAlt": "Flip card with an illustration of Nazily Muratova and the MNA logo"
+  },
   "landing": {
     "navigation": {
       "primary": "Primary navigation",

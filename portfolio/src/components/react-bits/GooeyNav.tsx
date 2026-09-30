@@ -151,6 +151,38 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   };
 
   useEffect(() => {
+  const sections = items.flatMap((item, index) => {
+    if (!item.href.startsWith('#')) return []
+
+    const section = document.getElementById(item.href.slice(1))
+    return section ? [{ section, index }] : []
+  })
+
+  if (sections.length === 0) return
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+      if (!visibleSection) return
+
+      const match = sections.find(
+        ({ section }) => section === visibleSection.target,
+      )
+
+      if (match) setActiveIndex(match.index)
+    },
+    { rootMargin: '-45% 0px -45% 0px', threshold: 0 },
+  )
+
+  sections.forEach(({ section }) => observer.observe(section))
+
+  return () => observer.disconnect()
+}, [items])
+
+  useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
     const activeLi = navRef.current.querySelectorAll('li')[activeIndex] as HTMLElement;
     if (activeLi) {
