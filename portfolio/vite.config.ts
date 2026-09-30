@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
+    base: '/MNA-Portfolio/',
     build: {
       rolldownOptions: {
         output: {
