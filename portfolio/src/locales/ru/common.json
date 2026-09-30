@@ -368,7 +368,8 @@
       "storeDescription": "Frontend интернет-магазина с каталогом товаров, карточками и взаимодействием с корзиной.",
       "storeBullet1": "Создание переиспользуемых React-компонентов",
       "storeBullet2": "Каталог товаров и пользовательские действия",
-      "storeBullet3": "Работа с Git и GitHub"
+      "storeBullet3": "Работа с Git и GitHub",
+      "storeCta": "Посмотреть проект ↗"
     },
     "contact": {
       "title": "Контакты",

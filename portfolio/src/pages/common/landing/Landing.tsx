@@ -419,7 +419,7 @@ const Landing = () => {
       </article>
 
       {/* Data Analytics */}
-      <article className=" rounded-3xl border border-white/10 bg-[#120F17]/70 p-7 backdrop-blur-md">
+      <article className="rounded-3xl border border-white/10 bg-[#120F17]/70 p-7 backdrop-blur-md">
         <p className="mb-3 text-sm font-medium text-violet-300">
           {t('portfolio.projects.analyticsCategory')}
         </p>
@@ -444,7 +444,7 @@ const Landing = () => {
           href="https://github.com/nazmyrat/Stroke-prediction"
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 text-white transition hover:bg-violet-500"
+          className="cursor-target mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 text-white transition hover:bg-violet-500"
         >
           {t('portfolio.projects.researchCta')}
         </a>
@@ -471,6 +471,15 @@ const Landing = () => {
         <p className="text-sm text-violet-200">
           {'React · JavaScript · HTML5 · CSS · Git · GitHub'}
         </p>
+
+        <a
+          href="https://github.com/nazmyrat/Online-Store"
+          target="_blank"
+          rel="noreferrer"
+          className="cursor-target mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 text-white transition hover:bg-violet-500"
+        >
+          {t('portfolio.projects.storeCta')}
+        </a>
       </article>
     </div>
   </div>

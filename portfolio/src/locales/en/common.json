@@ -336,12 +336,12 @@
       "motto": "To me, programming is a blend of logic, mathematics, and creativity.",
       "contactCta": "Contact Me",
       "projectsCta": "View My Projects →",
-      "avatarAlt": "Illustration of Nazily Muratova"
+      "avatarAlt": "Illustration of Muratova Nazyly"
     },
     "about": {
       "eyebrow": "01 / ABOUT ME",
       "heading": "Development at the intersection of logic,\ndata, and creativity",
-      "paragraph1": "I'm Nazily Muratova, growing as a full-stack developer. I build web applications and study Python, data analytics, and machine learning.",
+      "paragraph1": "I'm Muratova Nazyly, growing as a full-stack developer. I build web applications and study Python, data analytics, and machine learning.",
       "paragraph2": "I enjoy solving challenging problems, exploring new technologies, and turning ideas into working projects.",
       "stackLabel": "My Tech Stack",
       "stackCount": "4 technologies",
@@ -369,7 +369,8 @@
       "storeDescription": "An online store frontend with a product catalog, product cards, and shopping cart interactions.",
       "storeBullet1": "Reusable React components",
       "storeBullet2": "Product catalog and user interactions",
-      "storeBullet3": "Git and GitHub version control"
+      "storeBullet3": "Git and GitHub version control",
+      "storeCta": "View project ↗"
     },
     "contact": {
       "title": "Contact",
@@ -386,7 +387,7 @@
       "backToTop": "Back to top"
     },
     "languageLabel": "Choose language",
-    "flipCardAlt": "Flip card with an illustration of Nazily Muratova and the MNA logo"
+    "flipCardAlt": "Flip card with an illustration of Muratova Nazyly and the MNA logo"
   },
   "landing": {
     "navigation": {
