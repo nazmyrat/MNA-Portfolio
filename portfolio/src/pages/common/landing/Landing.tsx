@@ -197,7 +197,7 @@ const Landing = () => {
                 }}
               >
                 <img
-                  src="/nazily-avatar.png"
+                  src={`${import.meta.env.BASE_URL}nazily-avatar.png`}
                   alt={t('portfolio.hero.avatarAlt')}
                   style={{
                     width: '100%',
