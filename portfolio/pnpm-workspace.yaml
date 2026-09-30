@@ -10,12 +10,9 @@ supportedArchitectures:
 allowBuilds:
   '@firebase/util': true
   '@swc/core': true
-  '@vgpu/adapter-node': set this to true or false
+  '@vgpu/adapter-node': true
   protobufjs: true
-  webgpu: set this to true or false
-onlyBuiltDependencies:
-  - '@swc/core'
-  - esbuild
+  webgpu: true
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@0.3.3
   vite-plus: 0.3.3
